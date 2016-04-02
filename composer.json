@@ -1,0 +1,6 @@
+{
+	"name": "scottjs/wp-dotenv",
+	"require": {
+        "vlucas/phpdotenv": "^2.2"
+    }
+}
