@@ -100,11 +100,11 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Automatically set paths */
-define('WP_HOME', 'http://' . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']));
+define('WP_HOME', (getenv('APP_SSL') == 'true' ? 'https://' : 'http://') . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']));
+define('WP_SITEURL', (getenv('APP_SSL') == 'true' ? 'https://' : 'http://') . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']) . getenv('APP_CORE'));
 
 /** Configure directory paths if WP core is in a different directory */
 if(getenv('APP_CORE') != '') {
-	define('WP_SITEURL', 'http://' . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']) . getenv('APP_CORE'));
 	define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 	define('WP_CONTENT_DIR', realpath(ABSPATH.'../wp-content/'));
 }
