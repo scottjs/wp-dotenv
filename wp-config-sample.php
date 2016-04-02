@@ -22,12 +22,11 @@
 /**
  * Include Dotenv library to pull config options from .env file.
  */
-
+if(file_exists(__DIR__ . '/vendor/autoload.php')) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
 if(file_exists(dirname(__DIR__) . '/vendor/autoload.php')) {
 	require_once dirname(__DIR__) . '/vendor/autoload.php';
-}
-else if(__DIR__ . '/vendor/autoload.php') {
-	require_once __DIR__ . '/vendor/autoload.php';
 }
 
 $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
@@ -100,13 +99,15 @@ define('WP_DEBUG', getenv('APP_DEBUG') == 'true' ? true : false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Automatically set home and site paths */
+/** Automatically set paths */
 define('WP_HOME', 'http://' . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']));
-define('WP_SITEURL', 'http://' . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']) . '/wp');
 
-/** Configure content directory path if WP core is in a different location */
-define('WP_CONTENT_URL', WP_HOME . '/wp-content');
-define('WP_CONTENT_DIR', realpath(ABSPATH.'../wp-content/'));
+/** Configure directory paths if WP core is in a different directory */
+if(getenv('APP_CORE') != '') {
+	define('WP_SITEURL', 'http://' . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']) . getenv('APP_CORE'));
+	define('WP_CONTENT_URL', WP_HOME . '/wp-content');
+	define('WP_CONTENT_DIR', realpath(ABSPATH.'../wp-content/'));
+}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

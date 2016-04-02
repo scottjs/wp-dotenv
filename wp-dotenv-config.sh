@@ -15,12 +15,12 @@ CONFIG=${DIR%/*/*/*}
 # Import config settings
 source "$CONFIG/.env"
 
-cp "$CONFIG/vendor/scottjs/wp-dotenv/wp-config-sample.php" "$CONFIG$APP_WEB_ROOT/wp-config.php"
+cp "$CONFIG/vendor/scottjs/wp-dotenv/wp-config-sample.php" "$CONFIG$APP_WEBROOT/wp-config.php"
 
 if [[ $1 = "salts" ]]; then
 	SALT=$(curl -L https://api.wordpress.org/secret-key/1.1/salt/)
 	STRING='put your unique phrase here'
-	printf '%s\n' "g/$STRING/d" a "$SALT" . w | ed -s $CONFIG$APP_WEB_ROOT/wp-config.php
+	printf '%s\n' "g/$STRING/d" a "$SALT" . w | ed -s $CONFIG$APP_WEBROOT/wp-config.php
 fi
 
 echo WordPress config generated
