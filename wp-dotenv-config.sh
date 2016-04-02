@@ -16,6 +16,7 @@ CONFIG=${DIR%/*/*/*}
 source "$CONFIG/.env"
 
 cp "$CONFIG/vendor/scottjs/wp-dotenv/wp-config-sample.php" "$CONFIG$APP_WEB_ROOT/wp-config.php"
+cp "$CONFIG/vendor/scottjs/wp-dotenv/.env-sample" "$CONFIG$APP_WEB_ROOT/.env-sample"
 
 if [[ $1 = "salts" ]]; then
 	SALT=$(curl -L https://api.wordpress.org/secret-key/1.1/salt/)
