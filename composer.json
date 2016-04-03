@@ -10,5 +10,14 @@
 	],
 	"require": {
 		"vlucas/phpdotenv": "^2.2"
-	}
+	},
+	"scripts": {
+		"generate-config" : [
+			"vendor/scottjs/wp-dotenv/generate-config.sh"
+		],
+		"generate-config-with-salts" : [
+			"vendor/scottjs/wp-dotenv/generate-config.sh salts"
+		]
+	},
+	"minimum-stability": "dev"
 }
