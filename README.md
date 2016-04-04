@@ -11,7 +11,7 @@ Inspired by Laravel 5, WP Dotenv enables WordPress to use .env files for its con
 ## Notes
 
 * These scripts require a .env config file to be created in the project root, this file will be used to configure WordPress.
-* Running this script will replace the existing `wp-config.php` with a modified version to use the `.env` file.
+* Running this script will replace the existing `wp-config.php` with a modified version to use the .env file.
 
 ## Installation
 
