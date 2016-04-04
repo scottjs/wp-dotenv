@@ -61,7 +61,7 @@ From the root of your project, you will be able to run the following composer co
 
 * ***composer generate-config-with-salts*** - As above, but will also generate the salts automatically. This is a handy  command to use when starting a new project, but it can be used at any time.
 
-## Configuration Options
+## Config
 
 See below for an explanation of each configuration option used within the .env file.
 
