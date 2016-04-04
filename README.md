@@ -10,8 +10,8 @@ Inspired by Laravel 5, WP Dotenv enables WordPress to use .env files for its con
 
 ## Notes
 
-* These scripts require a .env config file in the project root. If you're using WordPress, you can use [scottjs/wp-dotenv](https://github.com/scottjs/wp-dotenv) to allow WordPress to share the same .env file and avoid maintaining two config files.
-* This script was designed with WordPress in mind, however it should work with other projects, such as Laravel 5.
+* These scripts require a .env config file to be created in the project root, this file will be used to configure WordPress.
+* Running this script will replace the existing `wp-config.php` with a modified version to use the `.env` file.
 
 ## Installation
 
