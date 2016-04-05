@@ -23,4 +23,4 @@ if [[ $1 = "salts" ]]; then
 	printf '%s\n' "g/$STRING/d" a "$SALT" . w | ed -s $CONFIG$APP_DOCROOT/wp-config.php
 fi
 
-echo WordPress config generated
+echo COMPLETE: WordPress config file generated: $APP_DOCROOT/wp-config.php
