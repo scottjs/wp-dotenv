@@ -15,7 +15,7 @@ Inspired by Laravel 5, WP Dotenv enables WordPress to use .env files for its con
 
 ## Installation
 
-Add `"scottjs/wp-dotenv": "1.*"` to your `composer.json` file:
+Run `composer require "scottjs/wp-dotenv:1.*"` from the root of your project, or manually add `"scottjs/wp-dotenv": "1.*"` to your `composer.json` file:
 
 ```
 "require": {
@@ -32,7 +32,7 @@ Then add the following scripts to your `composer.json` file:
 	],
 	"generate-config-with-salts" : [
 		"vendor/scottjs/wp-dotenv/generate-config.sh salts"
-	],
+	]
 }
 ```
 
