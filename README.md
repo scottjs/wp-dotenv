@@ -15,11 +15,11 @@ Inspired by Laravel 5, WP Dotenv enables WordPress to use .env files for its con
 
 ## Installation
 
-Add `"scottjs/wp-dotenv": "0.*"` to your `composer.json` file:
+Add `"scottjs/wp-dotenv": "1.*"` to your `composer.json` file:
 
 ```
 "require": {
-	"scottjs/wp-dotenv": "0.*"
+	"scottjs/wp-dotenv": "1.*"
 },
 ```
 
