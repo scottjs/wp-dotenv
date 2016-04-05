@@ -97,7 +97,7 @@ define('WP_DEBUG', getenv('APP_DEBUG') == 'true' ? true : false);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+	define('ABSPATH', dirname(__FILE__) . getenv('APP_CORE') != '' ? getenv('APP_CORE') : '/');
 
 /** Automatically set paths */
 define('WP_HOME', (getenv('APP_SSL') == 'true' ? 'https://' : 'http://') . (getenv('APP_WWW') == 'true' ? 'www.' : '') . str_replace('www.', '', $_SERVER['HTTP_HOST']));
