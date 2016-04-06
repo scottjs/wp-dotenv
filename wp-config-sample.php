@@ -24,13 +24,14 @@
  */
 if(file_exists(__DIR__ . '/vendor/autoload.php')) {
 	require_once __DIR__ . '/vendor/autoload.php';
+	$dotenv = new Dotenv\Dotenv(__DIR__);
+	$dotenv->load();
 }
 if(file_exists(dirname(__DIR__) . '/vendor/autoload.php')) {
 	require_once dirname(__DIR__) . '/vendor/autoload.php';
+	$dotenv = new Dotenv\Dotenv(dirname(__DIR__));
+	$dotenv->load();
 }
-
-$dotenv = new Dotenv\Dotenv(dirname(__DIR__));
-$dotenv->load();
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
