@@ -67,6 +67,8 @@ From the root of your project, you will be able to run the following composer co
 
 See below for an explanation of each configuration option used within the .env file.
 
+* ***APP_ENV*** - When set to `local`, the WordPress admin panel will display buttons in the admin panel to upgrade plugins and WordPress files. When set to `production`, the ability to plugins/software through the admin panel is disabled. 
+
 * ***APP_DOCROOT*** - Required by ***composer generate-config***, it should be relative to your project root folder and point to where the document root is configured. It should start with a slash and not include a trailing slash. Leave blank if not applicable. Example: `/public`.
 
 * ***APP_CORE*** - Required if WP core files are located in a subdirectory relative to `APP_DOCROOT`. It should point to the directory where WP core is installed. It should start with a slash and not include a trailing slash. Leave blank if not applicable. Example: `/wp`.
